@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Content Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>LinkedIn AI Content Generator</h1>
+        <p class="warning">
+            ⚠️ WARNING: This app uses API keys directly in the browser, which is INSECURE for public use. 
+            Only use this on your local machine and ensure the file is not hosted publicly.
+        </p>
+        
+        <section id="idea-section">
+            <h2>1. Generate Content Ideas</h2>
+            <button id="generateIdeasBtn">Generate Ideas from News</button>
+            
+            <div id="ideas-output" class="output-area">
+                <p>Ideas will appear here. Click an idea to use it for post generation.</p>
+            </div>
+            
+            <p id="idea-status" class="status-text"></p>
+        </section>
+
+        <section id="post-section">
+            <h2>2. Generate Final Post & Image</h2>
+            <div class="input-group">
+                <label for="postTopic">Selected/Custom Topic:</label>
+                <input type="text" id="postTopic" placeholder="Click an idea or enter a custom topic" readonly>
+            </div>
+            
+            <button id="generatePostBtn" disabled>Generate Post & Image</button>
+
+            <div id="post-output" class="output-area post-final-output">
+                <textarea id="finalPostText" rows="15" placeholder="The final LinkedIn post will be generated here..."></textarea>
+                <div id="image-output" class="image-container"></div>
+            </div>
+            
+            <p id="post-status" class="status-text"></p>
+            
+            <!-- NEW PUBLISH BUTTON -->
+            <button id="publishBtn" class="publish-button" disabled>3. Publish to LinkedIn</button>
+            <p id="publish-status" class="status-text"></p>
+        </section>
+    </div>
+
+    <script type="module" src="img_gen.js"></script>
+    <script type="module" src="ideagen.js"></script>
+    <script type="module" src="postgen.js"></script>
+    <script type="module" src="publish.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

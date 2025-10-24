@@ -1,0 +1,153 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #0077b5; /* LinkedIn Blue */
+}
+
+h2 {
+    margin-top: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 5px;
+}
+
+.warning {
+    color: #e67e22;
+    background-color: #fef7ec;
+    border: 1px solid #f9e2c6;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #0077b5;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button:hover:not(:disabled) {
+    background-color: #005582;
+}
+
+button:disabled {
+    background-color: #a0c3d9;
+    cursor: not-allowed;
+}
+
+/* NEW: Highlight the final publish button */
+.publish-button {
+    background-color: #28a745; /* Green for GO */
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+.publish-button:hover:not(:disabled) {
+    background-color: #1e7e34;
+}
+
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#postTopic {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.output-area {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-top: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.idea-item {
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.idea-item:hover {
+    background-color: #e9f5ff;
+    border-color: #0077b5;
+}
+
+.idea-item.selected {
+    background-color: #d0e7f7;
+    border: 2px solid #0077b5;
+    font-weight: bold;
+}
+
+.idea-item h4 {
+    margin: 0 0 5px 0;
+    color: #2c3e50;
+}
+
+.status-text {
+    font-style: italic;
+    min-height: 20px;
+    color: #555;
+}
+
+#finalPostText {
+    width: 100%;
+    border: none;
+    resize: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-family: inherit;
+}
+
+/* Styles for the generated image */
+.image-container {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
+
+.generated-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
