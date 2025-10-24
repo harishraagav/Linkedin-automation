@@ -7,7 +7,6 @@ import { createLinkedInPost, uploadImageToLinkedIn } from './publish.js';
 // --- API KEYS & CONFIG (WARNING: INSECURE FOR PUBLIC HOSTING) ---
 // **REPLACE THESE PLACEHOLDERS WITH YOUR ACTUAL KEYS/TOKEN**
 const GEMINI_API_KEY = "AIzaSyCUV3oFZ-k157PBTLgQ49jUwtWtBkmVAhY";
-const NEWS_API_KEY = "1f53aa1c9fcb464cabb5b07ff93873ed";
 const IMG_GEN_API_KEY = "12345678";
 const IMG_WORKER_URL = "https://image-api.harish-u-syndicate.workers.dev/";
 
@@ -55,7 +54,7 @@ async function handleGenerateIdeas() {
     DOM.ideasOutput.innerHTML = '<p>Loading...</p>';
     
     try {
-        const ideas = await generateIdeas(NEWS_API_KEY, GEMINI_API_KEY);
+        const ideas = await generateIdeas(GEMINI_API_KEY);
         
         if (ideas.error) {
             DOM.ideaStatus.textContent = `Error: ${ideas.error}`;
@@ -226,3 +225,4 @@ async function handlePublishToLinkedIn() {
         DOM.postBtn.disabled = false;
     }
 }
+
