@@ -1,9 +1,10 @@
 // ideagen.js
 // --- GEMINI API CALLS ---
 // Using gemini-2.5-flash for speed and complex output generation (JSON)
-const GEMINI_API_ENDPOINT = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent";
+// FIX: Using the V1 endpoint that correctly supports `systemInstruction` and `tools`
+const GEMINI_API_ENDPOINT = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent"; 
 // Set a reasonable timeout for the combined search/generation task
-const GEMINI_TIMEOUT_MS = 50000; 
+const GEMINI_TIMEOUT_MS = 30000; 
 
 // The functions related to NewsAPI are removed.
 
@@ -60,8 +61,8 @@ export async function generateIdeas(geminiApiKey) {
         // --- Gemini API Call Setup ---
         const requestBody = {
             contents: [{ parts: [{ text: userRequest }] }],
-            systemInstruction: { parts: [{ text: systemInstruction }] },
-            // CRITICAL: Enable the Google Search tool for grounding
+            // FIX: systemInstruction and tools must be direct properties of the payload
+            systemInstruction: systemInstruction,
             tools: [{ "google_search": {} }],
         };
 
